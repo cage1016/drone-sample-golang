@@ -10,7 +10,7 @@ clone:
   
 pipeline:
   test:
-    image: garychen/docker-golang:1.8.3-alpine
+    image: garychen/golang:1.8.3-alpine
     commands:
       - pwd
       - ls
@@ -18,6 +18,6 @@ pipeline:
       - dep ensure
       - go test -v
   build:
-    image: garychen/docker-golang:1.8.3-alpine
+    image: garychen/golang:1.8.3-alpine
     commands:
       - go build

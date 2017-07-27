@@ -1,0 +1,20 @@
+workspace:
+  base: /go/src
+  path: github.com/cutedogspark/drone-sample-golang
+
+clone:
+  git:
+    image: plugins/git
+    depth: 1
+    tags: true
+  
+pipeline:
+  test:
+    image: golang:latest
+    commands:
+      - dep ensure
+      - go test -v
+  build:
+    image: golang:latest
+    commands:
+      - go build

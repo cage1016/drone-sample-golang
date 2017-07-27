@@ -10,11 +10,14 @@ clone:
   
 pipeline:
   test:
-    image: golang:latest
+    image: garychen/docker-golang:1.8.3-alpine
     commands:
+      - pwd
+      - ls
+      - echo ${GOPATH}
       - dep ensure
       - go test -v
   build:
-    image: golang:latest
+    image: garychen/docker-golang:1.8.3-alpine
     commands:
       - go build
